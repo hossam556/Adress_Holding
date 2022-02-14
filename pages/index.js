@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Sidebar from '../components/Sidebar/Sidebar'
-import Main from '../components/Main/Main'
+import Home from '../components/Home/Home'
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <div className='flex flex-row'>
          <Sidebar/>
-         <Main/>
+         <Home/>
       </div>
     </div>
   )
