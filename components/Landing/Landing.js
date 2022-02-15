@@ -3,6 +3,7 @@ import Nav from './Nav/Nav'
 import Filter from './Filter/Filter'
 import Table from './Table/Table'
 import Pagination from './Pagination/Pagination'
+import MobileNav from './MobileNav/MobileNav'
 
 const Landing = ({results}) => {
   const [page , setPage] = useState(1);
@@ -24,7 +25,9 @@ const Landing = ({results}) => {
   let newUsers = results.slice(firstIndex,secondIndex) ;
 
   return (
-    <div className='w-full h-full p-4 m-4 overflow-y-auto'>
+    <div className='w-full h-full md:p-4 md:m-4 overflow-y-auto'>
+      <MobileNav/>
+      <div className='p-4 md:p-0'>
         <Nav/>
         <Filter/>
         <Table newUsers={newUsers}/>
@@ -35,6 +38,7 @@ const Landing = ({results}) => {
           secondIndex={secondIndex}
           nextHandler={nextHandler}
           backHandler={backHandler}/>
+        </div>
     </div>
   )
 }

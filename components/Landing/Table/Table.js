@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Table = ({newUsers}) => {
-  console.log('Table rendered')
   
   const addCol = (e) => {
     let elements = document.querySelectorAll(`#${e.target.value}`);

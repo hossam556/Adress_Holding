@@ -28,7 +28,7 @@ const Sidebar = () => {
     ];
 
   return (
-    <div className='flex flex-col justify-between w-80 h-screen px-4 pt-8 overflow-y-auto border-r'>
+    <div className='md:flex flex-col justify-between w-80 h-screen px-4 pt-8 overflow-y-auto border-r hidden'>
          <div>
             <h3 className="flex items-center text-2xl px-4 font-semibold text-blue-800">
                 <ColorSwatchIcon className="w-6 h-6 mr-5"/>
