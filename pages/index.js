@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Landing from '../components/Landing/Landing'
 
@@ -21,8 +20,6 @@ export default function Home({results}) {
 }
 
 export async function getServerSideProps(context){
-  // const genre = context.query.genre;
-  // console.log(genre);
 
   const request = await fetch(`https://jsonplaceholder.typicode.com/users`
   ).then(res => res.json());
