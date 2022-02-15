@@ -13,7 +13,7 @@ const Nav = () => {
             <h1 className='text-3xl font-semibold'>Trades</h1>
             <button className='bg-blue-900 text-white rounded-lg px-7 py-3'>Create a new trade</button>
         </div>
-        <div className='mt-5 flex justify-start items-center border-b-2'>
+        <div className='mt-5 flex justify-start items-center border-b-2 '>
           <p  
             className={`mr-8 py-3 cursor-pointer ${clicked === 'all' ? 'text-blue-800 font-semibold border-b-2 border-blue-800' :'text-gray-400'}`}
             onClick={() => clickHandler('all')}>

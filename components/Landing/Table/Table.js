@@ -1,9 +1,8 @@
 import React from 'react'
-import {users} from '../../../utils/Users'
 
-const Table = () => {
+const Table = ({results}) => {
   
-  let newUsers = users.slice(0,4) ;
+  let newUsers = results.slice(0,4) ;
 
   return (
     <div className="flex flex-col mt-8">
@@ -40,16 +39,16 @@ const Table = () => {
             <tbody className="bg-white">
             {newUsers.map((person , index) => (
               <tr className={`border-b-2 border-gray-100 hover:bg-gray-200 transition-all duration-300 cursor-pointer`} key={person.email}>
-                <td className="px-6 py-6 whitespace-nowrap text-sm font-medium text-gray-900">
+                <td className="px-6 py-6  text-sm font-medium text-gray-900">
                     {person.name}
                 </td>
-                <td className="px-6 py-6 whitespace-nowrap text-sm text-gray-900">
+                <td className="px-6 py-6  text-sm text-gray-900">
                     {person.email}
                 </td>
-                <td className="px-6 py-6 whitespace-nowrap text-sm text-gray-900">
+                <td className="px-6 py-6  text-sm text-gray-900">
                     {person.address.street}
                 </td>
-                <td className="px-6 py-6 whitespace-nowrap text-sm text-gray-900">
+                <td className="px-6 py-6  text-sm text-gray-900">
                     {person.address.city}
                 </td>
               </tr>

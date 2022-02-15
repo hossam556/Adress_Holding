@@ -3,7 +3,8 @@ import Image from 'next/image'
 import Sidebar from '../components/Sidebar/Sidebar'
 import Landing from '../components/Landing/Landing'
 
-export default function Home() {
+export default function Home({results}) {
+  console.log(results)
   return (
     <div>
       <Head>
@@ -13,8 +14,23 @@ export default function Home() {
       </Head>
       <div className='flex flex-row'>
          <Sidebar/>
-         <Landing/>
+         <Landing results={results}/>
       </div>
     </div>
   )
+}
+
+export async function getServerSideProps(context){
+  // const genre = context.query.genre;
+  // console.log(genre);
+
+  const request = await fetch(`https://jsonplaceholder.typicode.com/users`
+  ).then(res => res.json());
+
+
+  return{
+    props : {
+      results : request
+    }
+  }
 }

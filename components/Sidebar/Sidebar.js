@@ -28,7 +28,7 @@ const Sidebar = () => {
     ];
 
   return (
-    <div className='flex flex-col justify-between w-80 h-screen px-4 py-8 overflow-y-auto border-r'>
+    <div className='flex flex-col justify-between w-80 h-screen px-4 pt-8 overflow-y-auto border-r'>
          <div>
             <h3 className="flex items-center text-2xl px-4 font-semibold text-blue-800">
                 <ColorSwatchIcon className="w-6 h-6 mr-5"/>
@@ -52,7 +52,7 @@ const Sidebar = () => {
                 </aside>
             </div>
         </div>
-        <div className='flex items-center px-4 text-gray-600'>
+        <div className='flex items-center p-4 text-gray-600 rounded-md mb-2 cursor-pointer hover:bg-gray-200'>
             <LogoutIcon className="w-6 h-6 mr-2"/>
             <a href='#'>Logout</a>
         </div>
