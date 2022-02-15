@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Landing from '../components/Landing/Landing'
 
 export default function Home({results}) {
-  console.log(results)
+
   return (
     <div>
       <Head>
