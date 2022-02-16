@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Table = ({newUsers}) => {
+  console.log(newUsers)
   
   const addCol = (e) => {
     let elements = document.querySelectorAll(`#${e.target.value}`);
@@ -81,16 +82,16 @@ const Table = ({newUsers}) => {
             <tbody className="bg-white">
             {newUsers.map((person , index) => (
               <tr className={`border-b-2 border-gray-100 hover:bg-gray-200 transition-all duration-300 cursor-pointer`} key={person.email}>
-                <td  id='name' className="px-6 py-6  text-xs lg:text-sm text-gray-900">
+                <td  id='name' className="px-6 py-5 text-xs lg:text-sm text-gray-900">
                     {person.name}
                 </td>
-                <td  id='email' className="px-6 py-6  text-xs lg:text-sm  text-gray-900">
+                <td  id='email' className="px-6 py-5 text-xs lg:text-sm  text-gray-900">
                     {person.email}
                 </td>
-                <td  id='street' className="px-6 py-6  text-xs lg:text-sm  text-gray-900">
+                <td  id='street' className="px-6 py-5 text-xs lg:text-sm  text-gray-900">
                     {person.address.street}
                 </td>
-                <td  id='city' className="px-6 py-6  text-xs lg:text-sm  text-gray-900">
+                <td  id='city' className="px-6 py-5 text-xs lg:text-sm  text-gray-900">
                     {person.address.city}
                 </td>
               </tr>

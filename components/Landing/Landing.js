@@ -27,7 +27,7 @@ const Landing = ({results}) => {
   let firstIndex = (page -1) * noPerPage ; 
   let secondIndex = (page * noPerPage) -1 ;
 
-  let newUsers = results.slice(firstIndex,secondIndex) ;
+  let newUsers = results.slice(firstIndex,secondIndex+1) ;
 
   return (
     <div className='relative w-full h-full md:p-4 md:m-4 overflow-y-auto '>
