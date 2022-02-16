@@ -4,6 +4,7 @@ import Filter from './Filter/Filter'
 import Table from './Table/Table'
 import Pagination from './Pagination/Pagination'
 import MobileNav from './MobileNav/MobileNav'
+import SideDrawer from './SideDrawer/SideDrawer'
 
 const Landing = ({results}) => {
   const [page , setPage] = useState(1);
@@ -16,6 +17,10 @@ const Landing = ({results}) => {
     if(page === 1) return;
     setPage(prev => prev - 1)
  }
+ const sideDrawerHandler = () => {
+  let element = document.querySelector('#sideDrawer');
+  element.classList.toggle("translate-x-0");
+ }
 
   let usersNo = results.length ;
   let noPerPage = usersNo/2 ;
@@ -25,9 +30,9 @@ const Landing = ({results}) => {
   let newUsers = results.slice(firstIndex,secondIndex) ;
 
   return (
-    <div className='w-full h-full md:p-4 md:m-4 overflow-y-auto'>
-      <MobileNav/>
-      <div className='p-4 md:p-0'>
+    <div className='relative w-full h-full md:p-4 md:m-4 overflow-y-auto '>
+      <MobileNav sideDrawerHandler={sideDrawerHandler}/>
+      <div className='p-4 md:p-0 '>
         <Nav/>
         <Filter/>
         <Table newUsers={newUsers}/>
@@ -38,7 +43,8 @@ const Landing = ({results}) => {
           secondIndex={secondIndex}
           nextHandler={nextHandler}
           backHandler={backHandler}/>
-        </div>
+      </div>
+      <SideDrawer/>
     </div>
   )
 }

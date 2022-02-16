@@ -1,31 +1,11 @@
 import React from 'react'
-import {HomeIcon , CameraIcon, UserIcon , UsersIcon , AdjustmentsIcon , ColorSwatchIcon ,LogoutIcon} from '@heroicons/react/outline'
+import { ColorSwatchIcon ,LogoutIcon} from '@heroicons/react/outline'
 import Section from './Section'
+import {sectionsData} from '../../utils/sections'
 
 const Sidebar = () => {
 
-    const sectionsData = [
-        {
-            name : 'Dashboard',
-            icon : HomeIcon
-        },
-        {
-            name : 'Trades',
-            icon : CameraIcon
-        },
-        {
-            name : 'Organizations',
-            icon : UsersIcon
-        },
-        {
-            name : 'Users',
-            icon : UserIcon
-        },
-        {
-            name : 'System Settings',
-            icon : AdjustmentsIcon
-        }
-    ];
+   
 
   return (
     <div className='md:flex flex-col justify-between w-80 h-screen px-4 pt-8 overflow-y-auto border-r hidden'>

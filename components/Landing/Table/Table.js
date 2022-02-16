@@ -24,8 +24,8 @@ const Table = ({newUsers}) => {
     <div className="flex flex-col mt-2">
         <div className='flex items-center justify-between py-2 px-1'>
           <div>
-            Hide Column{' '}
-            <select value='' onChange={removeCol}>
+            <span className='text-blue-800 '>Hide column</span>{' '}
+            <select className='cursor-pointer' value='' onChange={removeCol}>
                 <option disabled value=''></option>
                 <option value='name'>name</option>
                 <option value='email'>email</option>
@@ -34,8 +34,8 @@ const Table = ({newUsers}) => {
             </select>
           </div>      
           <div>
-            Show Column{' '}
-            <select value='' onChange={addCol}>
+            <span className=' text-blue-800'>Show column</span>{' '}
+            <select className='cursor-pointer' value='' onChange={addCol}>
                 <option disabled value=''></option>
                 <option value='name'>name</option>
                 <option value='email'>email</option>
@@ -81,7 +81,7 @@ const Table = ({newUsers}) => {
             <tbody className="bg-white">
             {newUsers.map((person , index) => (
               <tr className={`border-b-2 border-gray-100 hover:bg-gray-200 transition-all duration-300 cursor-pointer`} key={person.email}>
-                <td  id='name' className="px-6 py-6 md:table-cell text-xs lg:text-sm font-medium text-gray-900">
+                <td  id='name' className="px-6 py-6  text-xs lg:text-sm text-gray-900">
                     {person.name}
                 </td>
                 <td  id='email' className="px-6 py-6  text-xs lg:text-sm  text-gray-900">

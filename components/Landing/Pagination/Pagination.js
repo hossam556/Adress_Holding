@@ -5,7 +5,7 @@ const Pagination = ({usersNo ,firstIndex ,secondIndex,backHandler,nextHandler , 
   // let usersNumber = results.length ;
 
   return (
-    <div className='mt-8 flex justify-between items-center p-4 rounded-lg bg-gray-50 drop-shadow-sm'>
+    <div className='mt-8 flex justify-between items-center p-4 rounded-lg bg-gray-50 drop-shadow-sm '>
         <span className='text-xs text-gray-500'>{firstIndex +1}-{secondIndex +1} of {usersNo}</span>
         <div className='flex items-center'>
             <span className='text-xs text-gray-500'>The page you'are on</span>
