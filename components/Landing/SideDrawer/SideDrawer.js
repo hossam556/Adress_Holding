@@ -7,7 +7,7 @@ const SideDrawer = ({opened}) => {
   return (
     <div 
      id='sideDrawer'
-     className={` absolute top-0 left-0 z-100 bg-blue-500 w-64 h-screen transition duration-200 ${opened ? 'translate-x-0' : "-translate-x-64"}`}>
+     className={`absolute top-0 -left-64 z-100 bg-blue-500 w-64 h-screen transition duration-200`}>
        <div className="flex flex-col justify-between mt-6">
             <aside>
             <ul>

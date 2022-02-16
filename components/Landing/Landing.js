@@ -19,7 +19,9 @@ const Landing = ({results}) => {
     setPage(prev => prev - 1)
  }
  const sideDrawerHandler = () => {
-   setOpened(prev => setOpened(!prev))
+  //  setOpened(prev => setOpened(!prev))
+  let element = document.querySelector('#sideDrawer');
+  element.classList.toggle("translate-x-64")
  }
 
   let usersNo = results.length ;
@@ -44,7 +46,9 @@ const Landing = ({results}) => {
           nextHandler={nextHandler}
           backHandler={backHandler}/>
       </div>
-      <SideDrawer opened={opened}/>
+      <SideDrawer 
+      // opened={opened}
+      />
     </div>
   )
 }
