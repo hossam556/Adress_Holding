@@ -1,48 +1,40 @@
 import React from 'react'
 
 const Table = ({newUsers}) => {
-  
-  const addCol = (e) => {
-    let elements = document.querySelectorAll(`#${e.target.value}`);
 
-    for(let i=0 ; i < elements.length ; i++ ){
-       elements[i].classList.remove("hidden");
+  const addRemoveCol = (type)=> {
+    let checkBox = document.getElementById(`${type}Checkbox`);
+    let elements = document.querySelectorAll(`#${type}`);
+    if (checkBox.checked == true){
+      for(let i=0 ; i < elements.length ; i++ ){
+            elements[i].classList.add("hidden");
+          }
+    } else {
+      for(let i=0 ; i < elements.length ; i++ ){
+        elements[i].classList.remove("hidden");
+      }
     }
-
-  }
-    
-  const removeCol = (e) => {
-    let elements = document.querySelectorAll(`#${e.target.value}`);
-
-    for(let i=0 ; i < elements.length ; i++ ){
-       elements[i].classList.add("hidden");
-    }
-
   }
 
   return (
     <div className="flex flex-col mt-2">
         <div className='flex items-center justify-between py-2 px-1'>
           <div>
-            <span>Select a coloumn to hide</span>{' '}
-            <select className='cursor-pointer' value='' onChange={removeCol}>
-                <option disabled value=''></option>
-                <option value='name'>name</option>
-                <option value='email'>email</option>
-                <option value='street'>street</option>
-                <option value='city'>city</option>
-            </select>
-          </div>      
+              <span htmlFor="nameCheckbox">name : </span> 
+              <input type="checkbox" id="nameCheckbox" onClick={() => addRemoveCol('name')}/>
+          </div>
           <div>
-            <span>Select a coloumn to show</span>{' '}
-            <select className='cursor-pointer' value='' onChange={addCol}>
-                <option disabled value=''></option>
-                <option value='name'>name</option>
-                <option value='email'>email</option>
-                <option value='street'>street</option>
-                <option value='city'>city</option>
-            </select>
-          </div>      
+              <label htmlFor="emailCheckbox">email : </label> 
+              <input type="checkbox" id="emailCheckbox" onClick={() => addRemoveCol('email')}/>
+          </div>
+          <div>
+              <label htmlFor="streetCheckbox">street : </label> 
+              <input type="checkbox" id="streetCheckbox" onClick={() => addRemoveCol('street')}/>
+          </div>
+          <div>
+              <label htmlFor="cityCheckbox">city : </label> 
+              <input type="checkbox" id="cityCheckbox" onClick={() => addRemoveCol('city')}/>
+          </div>
         </div>
         <div className="overflow-hidden  sm:rounded-lg">
           <table className="min-w-full divide-y ">

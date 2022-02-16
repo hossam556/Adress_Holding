@@ -19,7 +19,6 @@ const Landing = ({results}) => {
     setPage(prev => prev - 1)
  }
  const sideDrawerHandler = () => {
-  //  setOpened(prev => setOpened(!prev))
   let element = document.querySelector('#sideDrawer');
   element.classList.toggle("translate-x-64")
  }
