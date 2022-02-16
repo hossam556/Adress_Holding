@@ -24,7 +24,7 @@ const Table = ({newUsers}) => {
     <div className="flex flex-col mt-2">
         <div className='flex items-center justify-between py-2 px-1'>
           <div>
-            <span className='text-blue-800 '>Hide column</span>{' '}
+            <span>Select a coloumn to hide</span>{' '}
             <select className='cursor-pointer' value='' onChange={removeCol}>
                 <option disabled value=''></option>
                 <option value='name'>name</option>
@@ -34,7 +34,7 @@ const Table = ({newUsers}) => {
             </select>
           </div>      
           <div>
-            <span className=' text-blue-800'>Show column</span>{' '}
+            <span>Select a coloumn to show</span>{' '}
             <select className='cursor-pointer' value='' onChange={addCol}>
                 <option disabled value=''></option>
                 <option value='name'>name</option>
