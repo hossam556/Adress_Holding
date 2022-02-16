@@ -8,6 +8,7 @@ import SideDrawer from './SideDrawer/SideDrawer'
 
 const Landing = ({results}) => {
   const [page , setPage] = useState(1);
+  const [opened , setOpened] = useState(false);
 
   const nextHandler =() => {
     if(page === 2) return;
@@ -18,8 +19,7 @@ const Landing = ({results}) => {
     setPage(prev => prev - 1)
  }
  const sideDrawerHandler = () => {
-  let element = document.querySelector('#sideDrawer');
-  element.classList.toggle("translate-x-0");
+   setOpened(prev => setOpened(!prev))
  }
 
   let usersNo = results.length ;
@@ -44,7 +44,7 @@ const Landing = ({results}) => {
           nextHandler={nextHandler}
           backHandler={backHandler}/>
       </div>
-      <SideDrawer/>
+      <SideDrawer opened={opened}/>
     </div>
   )
 }

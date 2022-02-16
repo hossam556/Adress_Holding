@@ -4,7 +4,7 @@ import {SearchIcon , FilterIcon , ArrowCircleDownIcon} from '@heroicons/react/ou
 
 const Filter = () => {
   return (
-    <div className='mt-4 flex flex-col lg:flex-row justify-between items-center p-4 rounded-lg bg-gray-100 drop-shadow-sm'>
+    <div className='mt-3 flex flex-col lg:flex-row justify-between items-center p-4 rounded-lg bg-gray-100 drop-shadow-sm'>
         <form className='w-4/5 relative drop-shadow-md mb-2 lg:mb-0'>
             <SearchIcon className='w-5 h-5 absolute left-2 top-2.5 text-gray-500'/>
             <input className='border-none py-2 pl-9 pr-3 border-2 border-gray-300 rounded-lg w-full outline-none' 
