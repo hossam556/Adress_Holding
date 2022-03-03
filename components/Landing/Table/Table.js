@@ -19,7 +19,7 @@ const Table = ({newUsers}) => {
 
   const ref = useRef()
 
-  console.log(filteredArray)
+  // console.log(filteredArray)
 
   const updatingFilterHandler = (filterd) => {
     let objects = {}
@@ -86,7 +86,6 @@ const Table = ({newUsers}) => {
 
   }
 
-
   const changeHandler = (e , col)=> {
     if (e.key === 'Enter') {
       const value = e.target.value
@@ -94,9 +93,13 @@ const Table = ({newUsers}) => {
         value = +value ;
         setUserInput(value);
         setShowedFilter('');
-        // let sortedUsers = currentUsers.filter(item => item.id === value);
         let sortedUsers = users.filter(item => item.id === value);
-
+        if(sortedUsers.length === 0) {
+          setNotFound('No users to display')
+          return
+        }else{
+          setNotFound('')
+        }
         let newFilteredArray = [...filteredArray];
         newFilteredArray.push(
           {
@@ -108,16 +111,16 @@ const Table = ({newUsers}) => {
         // localStorage.setItem('filteredusers',JSON.stringify(sortedUsers))
         localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
         updatingFilterHandler(newFilteredArray)
-        if(sortedUsers.length === 0) {
-          setNotFound('No users to display')
-        }else{
-          setNotFound('')
-        }
       }else{
         setUserInput(value)
         setShowedFilter('')
-        // let sortedUsers = currentUsers.filter(item => item[col].toLowerCase().includes(value.toLowerCase()));
         let sortedUsers = users.filter(item => item[col].toLowerCase().includes(value.toLowerCase()));
+        if(sortedUsers.length === 0) {
+          setNotFound('No users to display')
+          return
+        }else{
+          setNotFound('')
+        }
         let newFilteredArray = [...filteredArray];
         newFilteredArray.push(
           {
@@ -129,11 +132,11 @@ const Table = ({newUsers}) => {
         // localStorage.setItem('filteredusers',JSON.stringify(sortedUsers))
         localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
         updatingFilterHandler(newFilteredArray)
-        if(sortedUsers.length === 0) {
-          setNotFound('No users to display')
-        }else{
-          setNotFound('')
-        }
+        // if(sortedUsers.length === 0) {
+        //   setNotFound('No users to display')
+        // }else{
+        //   setNotFound('')
+        // }
       }
     }
   }
@@ -144,9 +147,13 @@ const Table = ({newUsers}) => {
     setLessthan(value);
     if(e.key === 'Enter' && morethan != ''){ 
       setShowedFilter('');
-      // let sortedUsers = currentUsers.filter(item => morethan < item.id < value ) ;  
       let sortedUsers = users.filter(item => morethan < item.id < value );  
-
+      if(sortedUsers.length === 0) {
+        setNotFound('No users to display')
+        return
+      }else{
+        setNotFound('')
+      }
       let newFilteredArray = [...filteredArray];
       newFilteredArray.push(
         { 
@@ -158,11 +165,6 @@ const Table = ({newUsers}) => {
       // localStorage.setItem('filteredusers',JSON.stringify(sortedUsers))
       localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
       updatingFilterHandler(newFilteredArray)
-      if(sortedUsers.length === 0) {
-        setNotFound('No users to display')
-      }else{
-        setNotFound('')
-      }
     }
   }
   const moreHandler = (e , col) => {
@@ -171,9 +173,13 @@ const Table = ({newUsers}) => {
     setMorethan(value);
     if((e.key === 'Enter') && (lessthan != '')){
       setShowedFilter('');
-      // let sortedUsers = currentUsers.filter(item => (value < item.id) && (item.id < lessthan) );
       let sortedUsers = users.filter(item => (value < item.id) && (item.id < lessthan) );
-
+      if(sortedUsers.length === 0) {
+        setNotFound('No users to display')
+        return
+      }else{
+        setNotFound('')
+      }
       let newFilteredArray = [...filteredArray];
       newFilteredArray.push(
         {
@@ -185,11 +191,6 @@ const Table = ({newUsers}) => {
       // localStorage.setItem('filteredusers',JSON.stringify(sortedUsers)) 
       localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
       updatingFilterHandler(newFilteredArray)
-      if(sortedUsers.length === 0) {
-        setNotFound('No users to display')
-      }else{
-        setNotFound('')
-      }
     }
   }
   const sortHandler = (col) => {
