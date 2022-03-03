@@ -16,10 +16,7 @@ const Table = ({newUsers}) => {
 
   let currentUsers = filteredUsers.length > 0 ? filteredUsers : users ;
   const usersKeys =  Object.keys(users[0]);
-
   const ref = useRef()
-
-  // console.log(filteredArray)
 
   const updatingFilterHandler = (filterd) => {
     let objects = {}
@@ -44,10 +41,6 @@ const Table = ({newUsers}) => {
   }
 
   useEffect(()=>{
-    // let intialValues = JSON.parse(localStorage.getItem('filteredusers')) ?
-    //                    JSON.parse(localStorage.getItem('filteredusers')) : [] ;
-
-    // setFilteredUsers(intialValues)
     let intialValues = JSON.parse(localStorage.getItem('filteredArray')) ?
                        JSON.parse(localStorage.getItem('filteredArray')) : [] ;
 
@@ -108,7 +101,6 @@ const Table = ({newUsers}) => {
             users : sortedUsers
           });
         setFilteredArray(newFilteredArray);  
-        // localStorage.setItem('filteredusers',JSON.stringify(sortedUsers))
         localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
         updatingFilterHandler(newFilteredArray)
       }else{
@@ -129,14 +121,8 @@ const Table = ({newUsers}) => {
             users : sortedUsers
           });
         setFilteredArray(newFilteredArray);    
-        // localStorage.setItem('filteredusers',JSON.stringify(sortedUsers))
         localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
         updatingFilterHandler(newFilteredArray)
-        // if(sortedUsers.length === 0) {
-        //   setNotFound('No users to display')
-        // }else{
-        //   setNotFound('')
-        // }
       }
     }
   }
@@ -162,7 +148,6 @@ const Table = ({newUsers}) => {
           users : sortedUsers
         });
       setFilteredArray(newFilteredArray);  
-      // localStorage.setItem('filteredusers',JSON.stringify(sortedUsers))
       localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
       updatingFilterHandler(newFilteredArray)
     }
@@ -188,7 +173,6 @@ const Table = ({newUsers}) => {
           users : sortedUsers
         });
       setFilteredArray(newFilteredArray);   
-      // localStorage.setItem('filteredusers',JSON.stringify(sortedUsers)) 
       localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
       updatingFilterHandler(newFilteredArray)
     }
@@ -200,8 +184,6 @@ const Table = ({newUsers}) => {
         return a.id - b.id;
       });
       if(descending === false) sortedUsers.reverse();
-      localStorage.setItem('filteredusers',JSON.stringify(sortedUsers))
-      // localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
       setFilteredUsers(sortedUsers)
       setDescending(!descending);
 
@@ -220,8 +202,6 @@ const Table = ({newUsers}) => {
         return 0;
       });
       if(descending === true) sortedUsers.reverse();
-      localStorage.setItem('filteredusers',JSON.stringify(sortedUsers))
-      // localStorage.setItem('filteredArray',JSON.stringify(newFilteredArray))
       setFilteredUsers(sortedUsers);
       setDescending(!descending);
     }
