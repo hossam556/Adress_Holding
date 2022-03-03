@@ -253,7 +253,7 @@ const Table = ({newUsers}) => {
                 >
                   <div className='flex items-center relative'>
                     <span className='mr-3'>{item}</span>
-                    <FilterIcon className='w-4 h-4 mr-2 cursor-pointer' onClick={()=> showFilterHandler(item)}/>
+                    <FilterIcon className='w-4 h-4 mr-2 cursor-pointer hover:text-gray-800' onClick={()=> showFilterHandler(item)}/>
                     <ArrowCircleDownIcon className='w-4 h-4  cursor-pointer hover:text-gray-800' onClick={()=> sortHandler(item)}/>
                     {showedFilter === item &&
                      <div ref={ref} >
