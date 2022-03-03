@@ -3,6 +3,15 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Landing from '../components/Landing/Landing'
 
 export default function Home({results}) {
+  const usersNew = results.map(item => { 
+    return {
+      id : item.id ,
+      name : item.name ,
+      email : item.email ,
+      street : item.address.street ,
+      city : item.address.city
+    }
+  })
 
   return (
     <div>
@@ -13,7 +22,7 @@ export default function Home({results}) {
       </Head>
       <div className='flex flex-row'>
          <Sidebar/>
-         <Landing results={results}/>
+         <Landing results={usersNew}/>
       </div>
     </div>
   )

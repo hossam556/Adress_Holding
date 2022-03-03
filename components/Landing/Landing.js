@@ -36,7 +36,7 @@ const Landing = ({results}) => {
       <div className='p-4 md:p-0 '>
         <Nav/>
         <Filter/>
-        <Table newUsers={newUsers}/>
+        <Table newUsers={results}/>
         <Pagination 
           usersNo={usersNo} 
           page={page}
